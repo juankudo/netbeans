@@ -19,6 +19,7 @@ import java.util.Scanner;
 public class Cocina {
     private int n;
     private Receta[] lista=new Receta[n];
+    private Scanner read = new Scanner(System.in);
 
     public Cocina() {
     }
@@ -40,8 +41,10 @@ public class Cocina {
         nuevaLista[lista.length]=rec;
         lista=nuevaLista;
     }
-    public void buscarRecetaNombre(String name) {
+    public void buscarRecetaNombre() {
         int cont=0;
+        System.out.println("Ingrese elnombre de la receta:");
+        String name=read.nextLine();
         for (int i = 0; i < lista.length; i++) {
             if (lista[i].getNombre().equalsIgnoreCase(name)) {
                 System.out.println(lista[i].toString()); 
@@ -56,7 +59,6 @@ public class Cocina {
         System.out.println("""
                            Ingrese los ingredientes que tiene en su cocina:
                            (al terminar ingrese fin)""");
-         Scanner read = new Scanner(System.in);
         String aux;
         String acumulador = "";
         int cont = 0;
@@ -64,7 +66,7 @@ public class Cocina {
             aux = read.nextLine();
             if (!aux.equalsIgnoreCase("fin")) {
                 cont += 1;
-                acumulador += aux+"/"  ;
+                acumulador += aux+"/" ;
             }
         } while (!aux.equalsIgnoreCase("fin"));
         String[] ingredientes = new String[cont];
@@ -89,7 +91,7 @@ public class Cocina {
                         coinciden=false;
                     }
             }
-                 if (coinciden) {
+                 if (coinciden && (lista[j].getIngredientes().length<=ingredientes.length)) {
                         recetasPosibles[cont]=lista[j].getNombre();
                         cont+=1;
                     }
