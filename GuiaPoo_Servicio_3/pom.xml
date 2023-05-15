@@ -11,5 +11,5 @@
         <maven.compiler.target>19</maven.compiler.target>
         <exec.mainClass>com.mycompany.convertir.Convertir</exec.mainClass>
     </properties>
-    <name>GuiaPoo_Servicio_3</name>
+    <name>GuiaPoo_Serv_3</name>
 </project>

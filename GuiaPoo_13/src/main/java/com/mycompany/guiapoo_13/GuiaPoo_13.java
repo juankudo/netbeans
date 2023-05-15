@@ -1,6 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 package com.mycompany.guiapoo_13;
 
 import com.mycompany.guiapoo_13.entidades.Ahorcado;

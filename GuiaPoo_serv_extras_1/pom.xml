@@ -11,4 +11,5 @@
         <maven.compiler.target>19</maven.compiler.target>
         <exec.mainClass>com.mycompany.guiapoo_serv_extras_1.GuiaPoo_serv_extras_1</exec.mainClass>
     </properties>
+    <name>GuiaPoo_Serv_Extra_1</name>
 </project>

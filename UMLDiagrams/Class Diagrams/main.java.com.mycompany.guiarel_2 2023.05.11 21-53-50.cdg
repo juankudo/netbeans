@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.com.mycompany.guiarel_2">
+  <ClassDiagramComponents>
+    <Class name="Game" package="com.mycompany.guiarel_2.entities" visibility="public" xPosition="50.0" yPosition="122.0">
+      <Fields>
+        <Field name="playerList" type="List&lt;Player&gt;" visibility="private"/>
+        <Field name="revolver" type="Revolver" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="fillGame" returnType="void" visibility="public">
+          <Argument type="List&lt;Player&gt;" name="playerList"/>
+          <Argument type="Revolver" name="revolver"/>
+        </Method>
+        <Method name="enterPlayers" returnType="List&lt;Player&gt;" visibility="public"/>
+        <Method name="round" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Player" package="com.mycompany.guiarel_2.entities" visibility="public" xPosition="217.0" yPosition="428.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="gotWet" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="getGotWet" returnType="boolean" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="setGotWet" returnType="void" visibility="public">
+          <Argument type="boolean" name="gotWet"/>
+        </Method>
+        <Method name="shoot" returnType="boolean" visibility="public">
+          <Argument type="Revolver" name="revolver"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Revolver" package="com.mycompany.guiarel_2.entities" visibility="public" xPosition="624.0" yPosition="122.0">
+      <Fields>
+        <Field name="actualPosition" type="int" visibility="private"/>
+        <Field name="waterPosition" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getActualPosition" returnType="int" visibility="public"/>
+        <Method name="getWaterPosition" returnType="int" visibility="public"/>
+        <Method name="fillRevolver" returnType="void" visibility="public"/>
+        <Method name="wet" returnType="boolean" visibility="public"/>
+        <Method name="nextShoot" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GuiaRel_2" package="com.mycompany.guiarel_2" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="revolver" source="com.mycompany.guiarel_2.entities.Game" target="com.mycompany.guiarel_2.entities.Revolver" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.guiarel_2.entities.Game" target="com.mycompany.guiarel_2.entities.Revolver" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="playerList" source="com.mycompany.guiarel_2.entities.Game" target="com.mycompany.guiarel_2.entities.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Player&gt;"/>
+    <UseRelation source="com.mycompany.guiarel_2.entities.Game" target="com.mycompany.guiarel_2.entities.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="com.mycompany.guiarel_2.entities.Player" target="com.mycompany.guiarel_2.entities.Revolver" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
